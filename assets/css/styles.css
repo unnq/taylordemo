@@ -87,18 +87,28 @@ main { min-height: 70vh; }
 .card.link-card .chev { transition: transform .25s ease; }
 .card.link-card:hover .chev { transform: translateX(4px); }
 
-/* Invitation card */
+/* Invitation page — refined sizes */
 .invitation-wrap { min-height: 100svh; display: grid; place-items: center; position: relative; padding: 8rem 1.25rem 4rem; }
 .invitation-card { max-width: 720px; width: 100%; text-align: center; padding: clamp(2rem, 6vw, 4rem);
   background: color-mix(in oklab, var(--ivory) 96%, white 4%);
   border-radius: 18px; border: 1px solid var(--misty);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.06), 0 0 0 1px rgba(255,255,255,0.5) inset;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.04);
 }
-.crest-top { font-size: 1.2rem; letter-spacing: .4em; color: var(--foil); opacity: .6; margin-bottom: .5rem; }
-.lead { font-family: var(--serif); font-size: 1.25rem; margin: .75rem 0 1rem; }
+.invitation-card.refined { background: color-mix(in oklab, var(--ivory) 98%, white 2%); }
+.crest-top { font-size: 1.1rem; letter-spacing: .4em; color: var(--foil); opacity: .6; margin-bottom: .5rem; }
+
+/* New couple styling (smaller, small caps) */
+.couple { font-family: var(--serif); font-weight: 400; letter-spacing: .22em; font-size: clamp(1.4rem, 2.8vw, 2.4rem); line-height: 1.25; margin: .4rem 0 .2rem; }
+.couple .conj { letter-spacing: .16em; margin: 0 .35em; opacity: .85; }
+
+.hairline { border: none; height: 1px; background: var(--misty); opacity: .8; margin: 2rem 0; }
+.hairline.short { width: 140px; margin: .75rem auto 1rem; opacity: .7; }
+
+.lead { font-family: var(--serif); font-size: 1.15rem; margin: .65rem 0 .8rem; }
+.lead.muted { opacity: .9; font-size: 1.05rem; }
 .when, .time-place, .reception { font-family: var(--serif); font-weight: 300; letter-spacing: .04em; margin: .25rem 0; }
 .reception { margin-top: 1rem; opacity: .85; }
-.actions { display:flex; gap:.75rem; justify-content:center; margin-top: 1.5rem; flex-wrap: wrap; }
+.actions { display:flex; gap:.75rem; justify-content:center; margin-top: 1.4rem; flex-wrap: wrap; }
 
 /* Sections & grids */
 .section { padding: 8rem 1.5rem 4rem; }
@@ -107,8 +117,6 @@ main { min-height: 70vh; }
 .details-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin: 1rem 0 2rem; }
 .detail { padding: 1.1rem 1rem; border: 1px solid var(--misty); border-radius: 14px; background: color-mix(in oklab, var(--ivory) 92%, white 8%); }
 .detail-title { font-variant: small-caps; letter-spacing: .18em; margin: 0 0 .35rem; }
-
-.hairline { border: none; height: 1px; background: var(--misty); opacity: .8; margin: 2rem 0; }
 
 /* Timeline */
 .timeline { list-style: none; padding: 0; margin: 0; position: relative; }
