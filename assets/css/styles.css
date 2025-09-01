@@ -1,1 +1,87 @@
-c
+/* Taylor Webvitation — refined, airy, tactile */
+.when, .time-place, .reception { font-family: var(--serif); font-weight: 300; letter-spacing: .04em; margin: .25rem 0; }
+.reception { margin-top: 1rem; opacity: .85; }
+.actions { display:flex; gap:.75rem; justify-content:center; margin-top: 1.5rem; flex-wrap: wrap; }
+
+
+/* Sections & grids */
+.section { padding: 8rem 1.5rem 4rem; }
+.section.narrow { max-width: 820px; margin: 0 auto; }
+.section-title { font-family: var(--serif); font-weight: 400; letter-spacing: .08em; font-size: clamp(1.6rem, 3.2vw, 2.4rem); margin: 0 0 1rem; }
+.details-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; margin: 1rem 0 2rem; }
+.detail { padding: 1.1rem 1rem; border: 1px solid var(--misty); border-radius: 14px; background: color-mix(in oklab, var(--ivory) 92%, white 8%); }
+.detail-title { font-variant: small-caps; letter-spacing: .18em; margin: 0 0 .35rem; }
+
+
+.hairline { border: none; height: 1px; background: var(--misty); opacity: .8; margin: 2rem 0; }
+
+
+/* Timeline */
+.timeline { list-style: none; padding: 0; margin: 0; position: relative; }
+.timeline::before { content: ""; position: absolute; left: 1.1rem; top: .2rem; bottom: .2rem; width: 1px; background: var(--misty); }
+.timeline-item { display: grid; grid-template-columns: 5rem 1fr; align-items: start; padding-left: 2rem; position: relative; padding-bottom: .8rem; }
+.timeline-item::before { content: ""; position: absolute; left: .66rem; top: .2rem; width: .9rem; height: .9rem; border-radius: 999px; border: 1px solid var(--misty); background: var(--ivory); }
+.timeline-item time { font-family: var(--sans); font-size: .95rem; opacity: .8; }
+
+
+/* Chips & buttons */
+.chip { display:inline-block; border:1px solid var(--misty); border-radius: 999px; padding:.35rem .7rem; text-decoration:none; color:var(--soft-ink); font-size:.9rem; }
+.chip:hover { border-color: var(--foil); }
+
+
+.btn-ghost { display:inline-block; padding: .7rem 1.1rem; border: 1px solid var(--misty); border-radius: 10px; background: transparent; color: var(--soft-ink);
+text-decoration: none; letter-spacing: .06em; font-size: 1rem; cursor: pointer; position: relative; overflow: hidden; transition: border-color .25s ease;
+}
+.btn-ghost:hover { border-color: var(--foil); }
+
+
+/* Gold foil sheen hover */
+.sheen::after {
+content: ""; position: absolute; inset: 0; background: linear-gradient(100deg, transparent 0%, rgba(255,255,255,.6) 50%, transparent 100%);
+transform: translateX(-120%);
+}
+.sheen:hover::after { transition: transform .8s ease; transform: translateX(120%); }
+
+
+/* Forms */
+.label { font-variant: small-caps; letter-spacing: .16em; font-size: .85rem; opacity: .9; display:block; margin-bottom: .25rem; }
+input[type="text"], textarea {
+width: 100%; border: none; border-bottom: 1px solid var(--misty); background: transparent; padding: .6rem .1rem .5rem; font: inherit; color: inherit;
+}
+input:focus, textarea:focus { outline: none; border-bottom-color: var(--foil); box-shadow: 0 6px 0 -5px var(--foil); }
+.field { margin-bottom: 1rem; }
+.radios { display: grid; gap: .4rem; border: none; margin: .6rem 0 1rem; padding: 0; }
+.micro { font-size: .8rem; }
+.muted { opacity: .8; }
+.smallcaps { font-variant: small-caps; letter-spacing: .16em; }
+
+
+.card { border: 1px solid var(--misty); border-radius: 14px; background: color-mix(in oklab, var(--ivory) 92%, white 8%); padding: 1.2rem; box-shadow: 0 6px 24px rgba(0,0,0,0.04); }
+.gate, .rsvp, .thanks { max-width: 640px; margin: 0 auto; }
+.hidden { display: none; }
+
+
+/* Footer */
+.site-foot { text-align: center; padding: 3rem 1rem 4rem; opacity: .7; }
+
+
+/* Accessibility focus */
+:focus-visible { outline: 2px dotted var(--soft-ink); outline-offset: 2px; }
+
+
+/* Print the invitation beautifully */
+@media print {
+.nav, .site-foot { display: none !important; }
+body { background: white; }
+.invitation-wrap { padding: 0; }
+.invitation-card { border: none; box-shadow: none; max-width: none; width: auto; border-radius: 0; }
+}
+
+
+/* Responsive tweaks */
+@media (max-width: 720px) {
+.nav { padding: .9rem 1rem; }
+.vellum { inset: 5rem 1rem 5rem; }
+.timeline::before { left: .9rem; }
+.timeline-item { grid-template-columns: 4.2rem 1fr; padding-left: 1.6rem; }
+}
